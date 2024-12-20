@@ -70,6 +70,8 @@ vnoremap <Leader>d d
 " Indentation
 vnoremap < <gv
 vnoremap > >gv
+" Open terminal
+nnoremap <Leader>t :terminal<CR>
 " Remove ^M when pasted from Windows clipboard
 nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(winsaveview())<CR>
 
