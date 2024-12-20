@@ -41,17 +41,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Window resizing
-nnoremap <A-h> <C-w>5<
-nnoremap <A-l> <C-w>5>
-nnoremap <A-j> <C-w>-
-nnoremap <A-k> <C-w>+
+nnoremap <Esc>h <C-w>5<
+nnoremap <Esc>l <C-w>5>
+nnoremap <Esc>j <C-w>-
+nnoremap <Esc>k <C-w>+
 " Close current buffer
 nnoremap <leader>bd :bdelete<CR>
 " Source current buffer
 nnoremap <leader>xx :source %<CR>
 " Move text up and down
-vnoremap <A-j> :move '>+1<CR>gv-gv
-vnoremap <A-k> :move '<-2<CR>gv-gv
+vnoremap <Esc>j :move '>+1<CR>gv-gv
+vnoremap <Esc>k :move '<-2<CR>gv-gv
 " Keep centered when going half page up/down
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
