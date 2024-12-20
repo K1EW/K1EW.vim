@@ -72,6 +72,8 @@ vnoremap < <gv
 vnoremap > >gv
 " Open terminal
 nnoremap <Leader>t :terminal<CR>
+" Open netrw
+nnoremap <Leader>e :Explore %:p:h<CR>
 " Remove ^M when pasted from Windows clipboard
 nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(winsaveview())<CR>
 
