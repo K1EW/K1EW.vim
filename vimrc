@@ -129,6 +129,7 @@ if executable('clangd')
                 \ 'cmd': ['clangd'],
                 \ 'allowlist': ['c', 'cpp'],
                 \ })
+    autocmd User lsp_server_init highlight! link LspSemanticVariable Normal
 endif
 
 if executable('pylsp')
