@@ -136,24 +136,15 @@ if executable('pylsp')
                 \ 'name': 'pylsp',
                 \ 'cmd': ['pylsp'],
                 \ 'whitelist': ['python'],
-                \ 'config': {
-                \   'settings': {
-                \       'pylsp': {
-                \           'plugins': {
-                \               'flake8': {
-                \                   'enabled': v:false
-                \               },
-                \               'mccabe': {
-                \                   'enabled': v:false
-                \               },
-                \               'pycodestyle': {
-                \                   'enabled': v:false
-                \               }
-                \           }
-                \       }
-                \   }
-                \ }
-                \ })
+                \ 'workspace_config': {
+                \     'pylsp': {
+                \         'plugins': {
+                \             'pyflakes': {'enabled': v:false},
+                \             'mccabe': {'enabled': v:false},
+                \             'pycodestyle': {'enabled': v:false},
+                \         }
+                \     }
+                \ }})
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
