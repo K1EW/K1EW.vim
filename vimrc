@@ -86,6 +86,8 @@ Plug 'jpo/vim-railscasts-theme'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,7 +96,8 @@ call plug#end()
 
 " Color Scheme
 set bg=dark
-colorscheme railscasts
+" colorscheme railscasts
+colorscheme gruvbox
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
@@ -108,6 +111,16 @@ let g:NERDTreeShowLineNumbers=1
 " FZF
 nnoremap <Leader>ff :Files<CR>
 let g:fzf_layout = { 'down': '40%' }
+
+" LSP
+let g:lsp_semantic_enabled=1
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'clangd',
+                \ 'cmd': ['clangd'],
+                \ 'whitelist': ['c', 'cpp'],
+                \ })
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
