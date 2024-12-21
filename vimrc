@@ -80,6 +80,7 @@ nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(wins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 Plug 'preservim/nerdtree'
+Plug 'jpo/vim-railscasts-theme'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -88,7 +89,7 @@ call plug#end()
 
 " Color Scheme
 set bg=dark
-colorscheme desert
+colorscheme railscasts
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 hi Normal ctermbg=NONE guibg=NONE
 autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
