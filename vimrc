@@ -115,6 +115,14 @@ let g:fzf_layout = { 'down': '40%' }
 
 " LSP
 let g:lsp_semantic_enabled=1
+let g:lsp_diagnostics_highlights_insert_mode_enabled=0
+let g:lsp_diagnostics_signs_insert_mode_enabled=0
+let g:lsp_diagnostics_virtual_text_insert_mode_enabled=0
+let g:lsp_diagnostics_echo_delay=100
+let g:lsp_diagnostics_highlights_delay=100
+let g:lsp_diagnostics_signs_delay=100
+let g:lsp_diagnostics_virtual_text_delay=100
+
 if executable('clangd')
     autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'clangd',
