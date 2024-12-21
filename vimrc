@@ -27,6 +27,8 @@ set termguicolors
 set nohlsearch
 " Always show status line
 set laststatus=2
+" Disable Vim's show mode
+set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            KEYMAPS
@@ -83,6 +85,7 @@ Plug 'preservim/nerdtree'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,6 +104,10 @@ hi EndOfBuffer ctermbg=NONE guibg=NONE
 nnoremap <Leader>e :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
+
+" FZF
+nnoremap <Leader>ff :Files<CR>
+let g:fzf_layout = { 'down': '40%' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
