@@ -72,13 +72,6 @@ vnoremap < <gv
 vnoremap > >gv
 " Open terminal
 nnoremap <Leader>t :terminal<CR>
-" Open netrw
-nnoremap <Leader>e :call OpenNetrw()<CR>
-function! OpenNetrw()
-    Explore
-    set number
-    set relativenumber
-endfunction
 " Remove ^M when pasted from Windows clipboard
 nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(winsaveview())<CR>
 
@@ -87,6 +80,7 @@ nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(wins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,6 +93,10 @@ let g:gruvbox_transparent_bg = 1
 colorscheme gruvbox
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 hi Normal ctermbg=NONE guibg=NONE
+
+" NERDTree
+nnoremap <Leader>e :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
