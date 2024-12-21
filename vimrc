@@ -115,10 +115,35 @@ let g:fzf_layout = { 'down': '40%' }
 " LSP
 let g:lsp_semantic_enabled=1
 if executable('clangd')
-    au User lsp_setup call lsp#register_server({
+    autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'clangd',
                 \ 'cmd': ['clangd'],
-                \ 'whitelist': ['c', 'cpp'],
+                \ 'allowlist': ['c', 'cpp'],
+                \ })
+endif
+
+if executable('pylsp')
+    autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'pylsp',
+                \ 'cmd': ['pylsp'],
+                \ 'whitelist': ['python'],
+                \ 'config': {
+                \   'settings': {
+                \       'pylsp': {
+                \           'plugins': {
+                \               'flake8': {
+                \                   'enabled': v:false
+                \               },
+                \               'mccabe': {
+                \                   'enabled': v:false
+                \               },
+                \               'pycodestyle': {
+                \                   'enabled': v:false
+                \               }
+                \           }
+                \       }
+                \   }
+                \ }
                 \ })
 endif
 
