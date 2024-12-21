@@ -91,6 +91,8 @@ set bg=dark
 colorscheme desert
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 hi Normal ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
+hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 " NERDTree
 nnoremap <Leader>e :NERDTreeToggle<CR>
