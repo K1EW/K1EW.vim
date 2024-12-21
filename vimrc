@@ -147,6 +147,15 @@ if executable('pylsp')
                 \ }})
 endif
 
+if executable('ruff')
+    autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'ruff',
+                \ 'cmd': ['ruff', 'server'],
+                \ 'allowlist': ['python'],
+                \ 'workspace_config': {}
+                \ })
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
