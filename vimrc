@@ -79,7 +79,6 @@ nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(wins
 "                      PLUGINS (INSTALLATION)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
-Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -89,14 +88,14 @@ call plug#end()
 
 " Color Scheme
 set bg=dark
-let g:gruvbox_transparent_bg = 1
-colorscheme gruvbox
+colorscheme desert
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 hi Normal ctermbg=NONE guibg=NONE
 
 " NERDTree
 nnoremap <Leader>e :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeShowLineNumbers=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
