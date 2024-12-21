@@ -113,6 +113,11 @@ let g:NERDTreeShowLineNumbers=1
 nnoremap <Leader>ff :Files<CR>
 let g:fzf_layout = { 'down': '40%' }
 
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ }
+
 " LSP
 let g:lsp_semantic_enabled=1
 let g:lsp_diagnostics_highlights_insert_mode_enabled=0
