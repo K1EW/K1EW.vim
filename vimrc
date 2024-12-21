@@ -156,6 +156,36 @@ if executable('ruff')
                 \ })
 endif
 
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> <leader>gd <plug>(lsp-definition)
+    nmap <buffer> <leader>gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> <leader>gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <leader>gr <plug>(lsp-references)
+    nmap <buffer> <leader>gi <plug>(lsp-implementation)
+    nmap <buffer> <leader>gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+
+    let l:capabilities = lsp#get_server_capabilities('ruff')
+    if !empty(l:capabilities)
+      let l:capabilities.hoverProvider = v:false
+    endif
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+" Copilot
+let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         AUTO COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
