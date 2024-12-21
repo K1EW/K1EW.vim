@@ -81,6 +81,8 @@ nnoremap <Leader>^M :keeppatterns %s/\\s\\+$\\|\\r$//e<CR>:call winrestview(wins
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'jpo/vim-railscasts-theme'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
