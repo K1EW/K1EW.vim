@@ -89,6 +89,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'morhetz/gruvbox'
 Plug 'github/copilot.vim'
+Plug 'vimsence/vimsence'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -117,6 +118,8 @@ let g:fzf_layout = { 'down': '40%' }
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ }
+
+" Vimsence
 
 " LSP
 let g:lsp_semantic_enabled=1
