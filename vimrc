@@ -202,3 +202,5 @@ imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 " Set the current working directory to the current buffer's directory
 autocmd BufEnter * silent! lcd %:p:h
+" Disable Copilot on startup
+autocmd VimEnter * Copilot disable
