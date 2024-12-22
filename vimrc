@@ -90,6 +90,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'morhetz/gruvbox'
 Plug 'github/copilot.vim'
 Plug 'vimsence/vimsence'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
