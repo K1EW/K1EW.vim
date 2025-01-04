@@ -178,6 +178,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <C-n> :call lsp#scroll(+4)<CR>
+    nnoremap <buffer> <C-p> :call lsp#scroll(-4)<CR>
 
     let l:capabilities = lsp#get_server_capabilities('ruff')
     if !empty(l:capabilities)
