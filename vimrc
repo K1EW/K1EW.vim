@@ -29,6 +29,8 @@ set nohlsearch
 set laststatus=2
 " Disable Vim's show mode
 set noshowmode
+" Diable Sign Column
+set signcolumn=no
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            KEYMAPS
