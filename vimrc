@@ -126,6 +126,7 @@ let g:lightline = {
 let g:lsp_semantic_enabled=1
 let g:lsp_diagnostics_enabled=0
 let g:lsp_document_code_action_signs_enable=0
+let g:lsp_signature_help_enabled=0
 
 if executable('clangd')
     autocmd User lsp_setup call lsp#register_server({
@@ -173,14 +174,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>gt <plug>(lsp-type-definition)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> <leader>qf <plug>(lsp-code-action-float)
+    nmap <buffer> <leader>sh <plug>(lsp-signature-help)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-
-	" Close preview window with <C-c>
-	autocmd User lsp_float_opened nmap <buffer> <silent> <C-c>
-		      \ <Plug>(lsp-preview-close)
-	autocmd User lsp_float_closed nunmap <buffer> <C-c>
 
     let l:capabilities = lsp#get_server_capabilities('ruff')
     if !empty(l:capabilities)
