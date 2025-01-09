@@ -29,8 +29,6 @@ set nohlsearch
 set laststatus=2
 " Disable Vim's show mode
 set noshowmode
-" Diable Sign Column
-set signcolumn=no
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            KEYMAPS
@@ -166,7 +164,7 @@ endif
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
+    setlocal signcolumn=no
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> <leader>gd <plug>(lsp-definition)
     nmap <buffer> <leader>gs <plug>(lsp-document-symbol-search)
