@@ -117,7 +117,13 @@ autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE
 hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 " NERDTree
-nnoremap <Leader>e :NERDTreeToggle<CR>
+function NERDTreeToggleAndRefresh()
+    :NERDTreeToggle
+    if g:NERDTree.IsOpen()
+        :NERDTreeRefreshRoot
+    endif
+endfunction
+nnoremap <Leader>e :call NERDTreeToggleAndRefresh()<CR>
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowLineNumbers=1
 
