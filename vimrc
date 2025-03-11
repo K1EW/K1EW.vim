@@ -101,6 +101,7 @@ Plug 'morhetz/gruvbox'
 Plug 'github/copilot.vim'
 Plug 'vimsence/vimsence'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,6 +177,21 @@ if executable('ruff')
                 \ 'allowlist': ['python'],
                 \ 'workspace_config': {}
                 \ })
+endif
+
+if executable('vim-language-server')
+    autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'vim-language-server',
+                \ 'cmd': ['vim-language-server', '--stdio'],
+                \ 'whitelist': ['vim'],
+                \ 'workspace_config': {
+                \     'vim-language-server': {
+                \         'plugins': {
+                \             'vimlint': {'enabled': v:true},
+                \             'vimspector': {'enabled': v:true},
+                \         }
+                \     }
+                \ }})
 endif
 
 function! s:on_lsp_buffer_enabled() abort
