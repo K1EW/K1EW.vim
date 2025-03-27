@@ -12,7 +12,6 @@ set splitright
 " Disable line wrapping
 set nowrap
 " Use spaces instead of tabs
-set expandtab
 set tabstop=4           " Number of spaces a tab counts for
 set shiftwidth=4        " Number of spaces to use for auto-indentation
 " Keep 10 lines visible when scrolling
@@ -223,6 +222,9 @@ augroup lsp_install
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Copilot
 let g:copilot_no_tab_map = v:true
